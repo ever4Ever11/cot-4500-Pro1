@@ -74,35 +74,37 @@ try:
 
     if args.command == 'approximation':
 
-        main.approximation.calculate(args.initial_value,
-                                     tolerance=args.tolerance,
-                                     max_iterations=args.max_iterations)
+        r = main.approximation.calculate(args.initial_value,
+                                         tolerance=args.tolerance,
+                                         max_iterations=args.max_iterations)
 
     elif args.command == 'bisection':
 
         function = main.strtofun0(args.function)
 
-        main.bisection.calculate(function, args.a, args.b,
-                                 tolerance=args.tolerance,
-                                 max_iterations=args.max_iterations)
+        r = main.bisection.calculate(function, args.a, args.b,
+                                     tolerance=args.tolerance,
+                                     max_iterations=args.max_iterations)
 
     elif args.command == 'fixed_point':
 
         function = main.strtofun0(args.function)
 
-        main.fixed_point.calculate(function, args.initial_value,
-                                   tolerance=args.tolerance,
-                                   max_iterations=args.max_iterations)
+        r = main.fixed_point.calculate(function, args.initial_value,
+                                       tolerance=args.tolerance,
+                                       max_iterations=args.max_iterations)
 
     elif args.command == 'newton_raphson':
 
         function = main.strtofun0(args.function)
         function_prime = main.strtofun1(args.function)
 
-        main.newton_raphson.calculate(function, function_prime,
-                                      args.initial_value,
-                                      tolerance=args.tolerance,
-                                      max_iterations=args.max_iterations)
+        r = main.newton_raphson.calculate(function, function_prime,
+                                          args.initial_value,
+                                          tolerance=args.tolerance,
+                                          max_iterations=args.max_iterations)
+
+    logger.info(f'Result: {r}')
 
 except ZeroDivisionError as e:
     logger.info(e)
