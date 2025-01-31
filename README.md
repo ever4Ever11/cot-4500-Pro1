@@ -38,10 +38,10 @@ To do this:
 `python -m main -s --tolerance 0.001 approximation 1.5` \
 Result: 1.4142135623
 
-`python -m main -s --tolerance 0.001 bisection "x\*\*3 + 4\*x\*\*2 - 10" 1 2` \
+`python -m main -s --tolerance 0.001 bisection "x**3 + 4*x**2 - 10" 1 2` \
 Result: 1.3647460937
 
-`python -m main -s --tolerance 0.001 fixed_point "sqrt(10 - x\*\*3) / 2" 1.5` \
+`python -m main -s --tolerance 0.001 fixed_point "sqrt(10 - x**3) / 2" 1.5` \
 Result: 1.3654100611
 
 `python -m main -s --tolerance 0.001 newton_raphson "cos(x) - x" 0.5` \
